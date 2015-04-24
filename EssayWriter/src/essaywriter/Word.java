@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author atmarsh
  */
 public class Word {
-    
+
     private String word;
     private ArrayList<Word> followingWords;
     
@@ -37,5 +37,9 @@ public class Word {
 
     public ArrayList<Word> getFollowingWords() {
         return followingWords;
+    }
+    
+    public static Word getErrorWord() {
+        return new Word("ERROR");
     }
 }
