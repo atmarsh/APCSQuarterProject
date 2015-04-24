@@ -11,11 +11,12 @@ package essaywriter;
  */
 public class EssayWriter {
 
+    private static String string = "Hi there, this is a really fucking long sentence and I don't like it. And this sentence is really important too.";
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Parser.printWordList(Parser.parse(string));
     }
     
 }
