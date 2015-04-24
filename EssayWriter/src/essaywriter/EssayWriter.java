@@ -10,7 +10,7 @@ package essaywriter;
  * @author atmarsh
  */
 public class EssayWriter {
-
+    private static List<Word> words;
     private static String string = "Hi there, this is a really fucking long sentence and I don't like it. And this sentence is really important too.";
     /**
      * @param args the command line arguments
@@ -19,4 +19,7 @@ public class EssayWriter {
         Parser.printWordList(Parser.parse(string));
     }
     
+    public static List<Word> getWords() {
+        return words;
+    }
 }
