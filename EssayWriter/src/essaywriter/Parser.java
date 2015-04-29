@@ -35,12 +35,11 @@ public class Parser {
                 words.add(lastWord);
             } else if(isPunctuation(text.charAt(i))) {
                 lastWord = updateList(temp, lastWord);
-                lastWord = updateList(text.charAt(i) + "", lastWord);
+                lastWord = updateList(simplifyPunctuation(text.charAt(i)) + "", lastWord);
                 temp = "";
             }
         }
         lastWord = updateList(temp, lastWord);
-        words.add(lastWord);
         temp = "";
         return words;
     }
@@ -71,6 +70,7 @@ public class Parser {
             if(word.getWord().equals(wordString)) {
                 word.addWordAfter(lastWord);
                 contains = true;
+//                System.out.println(prevWord.getWord() + " = " + word.getWord());
                 prevWord = word;
             }
         }
