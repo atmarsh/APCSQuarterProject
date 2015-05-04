@@ -32,17 +32,16 @@ public class WritingCenter {
     
     public String wordAsString(Word word){
         String output = word.getWord();
-        if(myEssay.get(myEssay.size() - 1) == "\n"){
+        if(myEssay.get(myEssay.size() - 1) == "PARAGRAPH_BREAK"){
             output = "\n\t.";
         }
         if(myEssay.size() > 0){
-            if(myEssay.get(myEssay.size() - 1) == ". " || myEssay.get(myEssay.size() - 1) == "\n\t. "){
+            if(myEssay.get(myEssay.size() - 1) == "." || myEssay.get(myEssay.size() - 1) == "\n\t."){
                 output = Character.toUpperCase(output.charAt(0)) + output.substring(1);
             }
         }else{
             output = Character.toUpperCase(output.charAt(0)) + output.substring(1);
         }
-        output += " ";
         return output;
     }
     
@@ -50,6 +49,9 @@ public class WritingCenter {
         String essay = "";
         for(int i = 0; i < myEssay.size(); i++){
             essay += myEssay.get(i);
+            if(myEssay.get(i) != "," && myEssay.get(i) != "." && myEssay.get(i) != "\n\t."){
+                essay += myEssay.get(i);
+            }
         }
         return essay;
     }
