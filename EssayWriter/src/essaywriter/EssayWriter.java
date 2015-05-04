@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 public class EssayWriter {
 
     private static String string = "Hi there, this is a really fucking long sentence and I don't like it. And this sentence is really important too.";
+    private static List<Word> words;
     
     /**
      * @param args the command line arguments
@@ -28,10 +29,14 @@ public class EssayWriter {
             Logger.getLogger(EssayWriter.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println(string);
-        List<Word> words = Parser.parse(string);
+        words = Parser.parse(string);
         Parser.printWordList(words);
-        WritingCenter.generateEssay(words);
+        WritingCenter.generateEssay(1000);
         System.out.println(WritingCenter.getEssay());
+    }
+    
+    public static List<Word> getWords() {
+        return words;
     }
     
 }
