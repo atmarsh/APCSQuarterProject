@@ -8,15 +8,15 @@ import java.util.ArrayList;
  * @author Student
  */
 public class WritingCenter {
-    Random random = new Random();
-    ArrayList<String> myEssay = new ArrayList<String>();
+    private static Random random = new Random();
+    private static ArrayList<String> myEssay = new ArrayList<String>();
     
-    public Word getNextWord(Word thisWord){
+    public static Word getNextWord(Word thisWord){
         int ourChoice = random.nextInt(thisWord.getFollowingWords().size());
         return thisWord.getFollowingWords().get(ourChoice);
     }
     
-    public void generateEssay(int numberOfWords){
+    public static void generateEssay(int numberOfWords){
         int firstWord = random.nextInt(EssayWriter.getWords().size());
         Word currentWord = EssayWriter.getWords().get(firstWord);
         myEssay.add(wordAsString(currentWord));
@@ -30,7 +30,7 @@ public class WritingCenter {
         }
     }
     
-    public String wordAsString(Word word){
+    public static String wordAsString(Word word){
         String output = word.getWord();
         if(myEssay.get(myEssay.size() - 1) == "PARAGRAPH_BREAK"){
             output = "\n\t.";
@@ -45,7 +45,7 @@ public class WritingCenter {
         return output;
     }
     
-    public String getEssay(){
+    public static String getEssay(){
         String essay = "";
         for(int i = 0; i < myEssay.size(); i++){
             essay += myEssay.get(i);
