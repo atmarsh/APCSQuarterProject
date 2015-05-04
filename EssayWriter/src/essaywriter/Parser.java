@@ -20,7 +20,7 @@ public class Parser {
     public static ArrayList<Word> parse(String text) {
         text = text.toLowerCase();
         String temp = "";
-        Word lastWord = null;
+        Word lastWord = Word.getErrorWord();
         words = new ArrayList<>();
         for(int i = text.length() - 1; i >= 0; i--) {
             if(Character.isLetterOrDigit(text.charAt(i))) {
