@@ -22,7 +22,8 @@ public class WritingCenter {
         myEssay.add(wordAsString(currentWord));
         while(myEssay.size() < numberOfWords){
             int nextWord = random.nextInt(currentWord.getFollowingWords().size());
-            while(currentWord.getFollowingWords().get(nextWord) == Word.getErrorWord()){
+            while(currentWord.getFollowingWords().get(nextWord).getWord().equalsIgnoreCase(Word.getErrorWord().getWord())) {
+                System.out.println(currentWord.getWord());
                 nextWord = random.nextInt(currentWord.getFollowingWords().size());
             }
             currentWord = currentWord.getFollowingWords().get(nextWord);
