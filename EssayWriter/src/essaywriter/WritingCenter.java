@@ -39,7 +39,7 @@ public class WritingCenter {
             }
         }
         if(myEssay.size() > 0){
-            if(myEssay.get(myEssay.size() - 1) == "." || myEssay.get(myEssay.size() - 1) == ".\n\t"){
+            if(myEssay.get(myEssay.size() - 1).contains(".") || myEssay.get(myEssay.size() - 1).contains(".\n\t"){
                 output = Character.toUpperCase(output.charAt(0)) + output.substring(1);
             }
         }else{
@@ -52,7 +52,7 @@ public class WritingCenter {
         String essay = "";
         for(int i = 0; i < myEssay.size(); i++){
             essay += myEssay.get(i);
-            if(myEssay.get(i) != "," && myEssay.get(i) != "." && myEssay.get(i) != ".\n\t"){
+            if(!myEssay.get(i + 1).contains(",") && !myEssay.get(i + 1).contains(".") && !myEssay.get(i + 1).contains(".\n\t")){
                 essay += " ";
             }
         }
