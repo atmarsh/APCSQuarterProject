@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class WritingCenter {
     private static Random random = new Random();
     private static ArrayList<String> myEssay = new ArrayList<String>();
+    private static int capitalizeNow = 0;
     
     public static Word getNextWord(Word thisWord){
         int ourChoice = random.nextInt(thisWord.getFollowingWords().size());
@@ -39,9 +40,13 @@ public class WritingCenter {
             }
         }
         if(myEssay.size() > 0){
-            if(myEssay.get(myEssay.size() - 1).contains(".") || myEssay.get(myEssay.size() - 1).contains(".\n\t")){
+            if(word.getWord().contains(".") || word.getWord().contains(".\n\t")){
+                capitalizeNow = 2;
+            }
+            if(capitalizeNow > 0){
                 if(output.length() > 0){
                     output = Character.toUpperCase(output.charAt(0)) + output.substring(1);
+                    capitalizeNow --;
                 }
             }
         }else{
