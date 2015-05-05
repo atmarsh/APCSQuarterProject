@@ -22,7 +22,7 @@ public class Parser {
         Word lastWord = Word.getErrorWord();
         words = new ArrayList<>();
         for (int i = text.length() - 1; i >= 0; i--) {
-            if (Character.isLetterOrDigit(text.charAt(i))) {
+            if (Character.isLetterOrDigit(text.charAt(i)) || text.charAt(i) == '\'') {
                 temp = text.charAt(i) + temp;
             } else if (Character.isSpaceChar(text.charAt(i))) {
                 if (temp != "") {
