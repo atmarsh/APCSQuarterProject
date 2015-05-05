@@ -15,6 +15,8 @@ public class Word {
 
     private String word;
     private ArrayList<Word> followingWords;
+    private int properNounTrue = 0;
+    private int properNounFalse = 0;
     
     private Word(String word) {
         this.word = word;
@@ -41,5 +43,17 @@ public class Word {
     
     public static Word getErrorWord() {
         return new Word("ERROR");
+    }
+    
+    public boolean isProperNoun() {
+        return properNounTrue > properNounFalse;
+    }
+    
+    public void setProperNoun(boolean properNoun) {
+        if(properNoun) {
+            properNounTrue++;
+        } else {
+            properNounFalse++;
+        }
     }
 }
