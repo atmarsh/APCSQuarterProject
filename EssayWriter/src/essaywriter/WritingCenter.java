@@ -34,7 +34,7 @@ public class WritingCenter {
     public static String wordAsString(Word word){
         String output = word.getWord();
         if(myEssay.size() > 0) {
-            if(myEssay.get(myEssay.size() - 1) == "PARAGRAPH_BREAK"){
+            if(myEssay.get(myEssay.size()) == "PARAGRAPH_BREAK"){
                 output = ".\n\t";
             }
         }
