@@ -39,7 +39,7 @@ public class WritingCenter {
             }
         }
         if(myEssay.size() > 0){
-            if(myEssay.get(myEssay.size() - 1).contains(".") || myEssay.get(myEssay.size() - 1).contains(".\n\t"){
+            if(myEssay.get(myEssay.size() - 1).contains(".") || myEssay.get(myEssay.size() - 1).contains(".\n\t")){
                 output = Character.toUpperCase(output.charAt(0)) + output.substring(1);
             }
         }else{
