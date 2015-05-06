@@ -37,6 +37,7 @@ public class WritingCenter {
         if(myEssay.size() > 0) {
             if(word.getWord() == "PARAGRAPH_BREAK"){
                 output = ".\n\t";
+                capitalizeNow = 2;
             }
         }
         if(myEssay.size() > 0){
