@@ -43,7 +43,7 @@ public class WritingCenter {
             if(word.getWord().contains(".") || word.getWord().contains(".\n\t")){
                 capitalizeNow = 2;
             }
-            if(capitalizeNow > 0){
+            if(capitalizeNow > 0 || word.isProperNoun()){
                 if(output.length() > 0){
                     output = Character.toUpperCase(output.charAt(0)) + output.substring(1);
                     capitalizeNow --;
